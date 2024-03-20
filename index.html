@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Finanças Pessoais</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Finanças Pessoais</h1>
+    </header>
+    <main>
+        <section id="transaction-form">
+            <!-- Formulário para adicionar transações -->
+            <h2>Adicionar Transação</h2>
+            <form id="add-transaction-form">
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" name="description" required><br><br>
+
+                <label for="amount">Valor:</label>
+                <input type="number" id="amount" name="amount" required><br><br>
+
+                <label for="category">Categoria:</label>
+                <input type="text" id="category" name="category" required><br><br>
+
+                <label for="type">Tipo:</label>
+                <select id="type" name="type">
+                    <option value="expense">Despesa</option>
+                    <option value="income">Receita</option>
+                </select><br><br>
+
+                <input type="submit" value="Adicionar Transação">
+            </form>
+        </section>
+
+        <!-- Código para o gráfico de despesas e receitas -->
+        <section id="charts">
+            <h2>Gráfico de Despesas e Receitas</h2>
+            <canvas id="expenses-chart" width="200" height="100"></canvas>
+            <canvas id="category-chart" width="200" height="100"></canvas>
+        </section>
+
+        <!-- Seção para gráficos e seleção de período -->
+        <section id="period-selection">
+            <h2>Selecione um Período para Atualizar os Gráficos</h2>
+            <label for="period">Selecione o Período:</label>
+            <select id="period" name="period">
+                <option value="2024-01">Janeiro 2024</option>
+                <option value="2023-02">Fevereiro 2024</option>
+                <!-- Adicione mais opções de acordo com os períodos que deseja -->
+            </select>
+            <button onclick="updateChart()">Atualizar Gráficos</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
